@@ -172,19 +172,18 @@ export const actionResetZoom = register({
     };
   },
   PanelComponent: ({ updateData, appState }) => (
-    <Tooltip label={t("buttons.resetZoom")}>
-      <ToolButton
-        type="button"
-        className="reset-zoom-button"
-        aria-label={t("buttons.resetZoom")}
-        onClick={() => {
-          updateData(null);
-        }}
-        size="s"
-      >
-        {(appState.zoom.value * 100).toFixed(0)}%
-      </ToolButton>
-    </Tooltip>
+    <ToolButton
+      type="button"
+      className="reset-zoom-button"
+      title={t("buttons.resetZoom")}
+      aria-label={t("buttons.resetZoom")}
+      onClick={() => {
+        updateData(null);
+      }}
+      size="s"
+    >
+      {(appState.zoom.value * 100).toFixed(0)}%
+    </ToolButton>
   ),
   keyTest: (event) =>
     (event.code === CODES.ZERO || event.code === CODES.NUM_ZERO) &&
